@@ -13,7 +13,7 @@ class Fecha
 	
 	def valIso(strFecha)
 		begin
-			@d = Date.strptime(strFecha, '%Y-%m-%d')	
+			@fecha = Date.strptime(strFecha, '%Y-%m-%d')	
 		rescue 
 			'Fecha con mal formato'
 		end
@@ -21,15 +21,15 @@ class Fecha
 	end
 
 	def latino strFecha
-		Date.strptime(strFecha, '%d/%m/%Y')		
+		@fecha = Date.strptime(strFecha, '%d/%m/%Y')		
 	end
 
 	def usa strFecha
-		Date.strptime(strFecha, '%m-%d-%Y')		
+		@fecha = Date.strptime(strFecha, '%m-%d-%Y')		
 	end
 
 	def flexible strFecha
-		
+		@fecha = Date.parse(strFecha)		
 	end
 
 end
